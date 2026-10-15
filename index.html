@@ -47,7 +47,8 @@ section{padding:clamp(80px,10vw,140px) 0}
 .hero{position:relative;padding:clamp(18px,3vw,36px) clamp(12px,3vw,40px) clamp(28px,4vw,56px);overflow:hidden}
 .fantasma{position:absolute;inset:clamp(4px,1.4vw,16px) 0 auto;text-align:center;white-space:nowrap;font:500 clamp(54px,11.4vw,170px)/1 var(--sans);font-stretch:112%;letter-spacing:-.03em;color:rgba(252,250,248,.55);-webkit-text-stroke:1px rgba(255,255,255,.7);text-shadow:0 1px 0 rgba(255,255,255,.4),0 -1px 0 rgba(120,90,80,.08);user-select:none;pointer-events:none}
 .cartao{position:relative;max-width:1360px;margin:clamp(56px,8.6vw,128px) auto 0;height:min(calc(100svh - 120px),860px);min-height:560px;border-radius:var(--r);overflow:hidden;border:2px solid rgba(252,250,248,.8);color:var(--branco);display:flex;flex-direction:column;justify-content:space-between}
-.cartao>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 64%;animation:entra 1.6s cubic-bezier(.2,.7,.2,1) both}
+.cartao picture{position:absolute;inset:0}
+.cartao img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;animation:entra 1.6s cubic-bezier(.2,.7,.2,1) both}
 .cartao::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(46,36,32,.38) 0%,rgba(46,36,32,0) 22%,rgba(46,36,32,0) 48%,rgba(46,36,32,.5) 100%)}
 .nav{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(18px,2.4vw,30px) clamp(20px,3vw,40px)}
 .marca{text-decoration:none;display:grid;gap:2px}
@@ -64,12 +65,12 @@ section{padding:clamp(80px,10vw,140px) 0}
 .frase a{display:inline-block;margin-top:10px;font-size:15px;text-underline-offset:5px}
 .nome{margin-top:clamp(6px,1vw,14px);font:400 clamp(52px,10.4vw,156px)/.86 var(--sans);font-stretch:116%;letter-spacing:-.045em;color:var(--branco);white-space:nowrap}
 @keyframes entra{from{transform:scale(1.06);opacity:.5}to{transform:none;opacity:1}}
-@media(prefers-reduced-motion:reduce){.cartao>img{animation:none}}
+@media(prefers-reduced-motion:reduce){.cartao img{animation:none}}
 @media(max-width:880px){.menu{display:none}}
 @media(max-width:640px){
   .fantasma{white-space:normal;line-height:.9;font-size:21vw}
   .cartao{margin-top:31vw;height:calc(100svh - 70px);min-height:560px}
-  .cartao>img{object-position:50% 50%;scale:1.4;transform-origin:50% 60%;translate:0 -12%}
+  .cartao img{object-position:50% 40%}
   .nome{white-space:normal;font-size:19vw;line-height:.88}
   .nav .btn span{display:none}
 }
@@ -164,7 +165,7 @@ section{padding:clamp(80px,10vw,140px) 0}
 <section class="hero textura" style="padding-top:clamp(18px,3vw,36px)">
   <div class="fantasma" aria-hidden="true">Gabriela Athayde</div>
   <div class="cartao">
-    <img src="img/gabi-capa.jpg" alt="Gabriela Athayde mostrando as unhas vermelhas com as mãos à frente do rosto">
+    <picture><source media="(min-width:641px)" srcset="img/gabi-capa-mao-largo.jpg"><img src="img/gabi-capa-mao.jpg" alt="Gabriela Athayde mostrando as unhas vermelhas com as mãos à frente do rosto"></picture>
     <header class="nav">
       <a class="marca" href="#"><b>GA</b><span>Nail designer</span></a>
       <ul class="menu"><li><a href="#sobre">Sobre</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#mentoria">Mentoria</a></li><li><a href="#onde">Onde estou</a></li></ul>
